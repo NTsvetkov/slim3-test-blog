@@ -1,0 +1,32 @@
+{% extends '/base.twig' %}
+
+{% block title %}Profile edit{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <h5 class="card-header">Edit profile</h5>
+                <div class="card-body">
+                    <form action="{{ path_for('auth.profile.edit') }}" method="post" autocomplete="off">
+                        <div class="form-group">
+                            <label for="fullname">Full name</label>
+                            <input type="text" class="form-control{{ errors.fullname ? ' is-invalid' : '' }}" id="fullname" name="fullname" value="{{ old.fullname }}">
+                            {% if errors.fullname %}
+                                <span class="invalid-feedback">{{ errors.fullname|first }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control{{ errors.email ? ' is-invalid' : '' }}" id="email" name="email" value="{{ old.email }}">
+                            {% if errors.email %}
+                                <span class="invalid-feedback">{{ errors.email|first }}</span>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-primary float-right">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
