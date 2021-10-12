@@ -59,6 +59,9 @@ $container['PasswordController'] = function ($container) {
 $container['EditProfileController'] = function ($container) {
     return new \App\Controllers\User\EditProfileController($container);
 };
+$container['ManageUsersController'] = function ($container) {
+    return new \App\Controllers\User\ManageUsersController($container);
+};
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 $app->add(new \App\Middleware\OldInputMiddleware($container));
 

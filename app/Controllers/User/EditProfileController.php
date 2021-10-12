@@ -12,7 +12,7 @@ class EditProfileController extends Controller
         $old = $this->auth->user();
         $this->container->view->getEnvironment()->addGlobal('old', $old);
 
-        return $this->view->render($response, 'user/edit.twig');
+        return $this->view->render($response, 'users/edit.twig');
     }
 
     public function postEditProfile($request, $response)

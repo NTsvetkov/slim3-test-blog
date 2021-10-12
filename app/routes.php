@@ -17,6 +17,8 @@ $app->group('', function () {
     $this->post('/password', 'PasswordController:postChangePassword');
     $this->get('/profile', 'EditProfileController:getEditProfile')->setName('auth.profile.edit');
     $this->post('/profile', 'EditProfileController:postEditProfile');
+    $this->get('/users', 'ManageUsersController:getListUsers')->setName('auth.listusers');
+    $this->post('/users', 'ManageUsersController:postListUsers');
     $this->get('/logout', 'LogoutController:getLogout')->setName('auth.logout');
 })->add(new AuthMiddleware($container));
 

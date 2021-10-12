@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function getLogin($request, $response)
     {
-        return $this->view->render($response, 'user/login.twig');
+        return $this->view->render($response, 'users/login.twig');
     }
 
     public function postLogin($request, $response)

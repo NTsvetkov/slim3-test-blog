@@ -9,7 +9,7 @@ class PasswordController extends Controller
 {
     public function getChangePassword($request, $response)
     {
-        return $this->view->render($response, 'user/password.twig');
+        return $this->view->render($response, 'users/password.twig');
     }
 
     public function postChangePassword($request, $response)

@@ -10,7 +10,7 @@ class RegisterController extends Controller
 {
     public function getRegister($request, $response)
     {
-        return $this->view->render($response, 'user/register.twig');
+        return $this->view->render($response, 'users/register.twig');
     }
 
     public function postRegister($request, $response)
